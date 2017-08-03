@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+ <script type="text/javascript" src="app.js" ></script>
+
+
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+    </style>
+  </head>
+
+<body ng-app="myapp" ng-controller="LunchCheckController">
+   <div class="container" ng-app="myapp" ng-controller="mycontrol" >
+     <div >
+     <h1>Lunch Checker</h1>
+
+       <p>Escriba una palabra en el textbox:</p>
+        <p>Nombre: <input type="text" ng-model="name"></p>
+       <p>Apellido: <input type="text" ng-model="apelido"></p>
+        
+        <br>
+       Nombre Completo: {{ name + " "+ apelido }}
+
+         <div class="form-group">
+         <p> contador de clicks </p>
+             <button ng-click="contadores()"   class="btn btn-info">Contador</button>
+         </div>
+      <p> Numero de clicks al boton Contador:  {{ contador }} </p>
+      </div>
+   </div>
+
+
+<div class="container" >
+  
+  
+    <div class="form-group">
+      <label >Comentario:</label>
+      <input type="text" class="form-control" placeholder="Ingrese el comentario" ng-model="nuevocomentario.comentario" >
+    </div>
+    <div class="form-group">
+      <label >Usuario:</label>
+      <input type="text" class="form-control"  placeholder="Ingrese el usuario"  ng-model="nuevocomentario.usuario" >
+    </div>
+ 
+    <button  class="btn btn-primary" ng-click="agregarcomentario()" >Agregar comentarios</button>
+  
+   <table class="table">
+    <thead>
+      <tr>
+        <th>Comentario</th>
+        <th>Usuario</th>
+      </tr>
+    </thead>
+    <tbody ng-repeat="comentar in comentarios">
+      <tr>
+        <td> {{ comentar.comentario }}</td>
+        <td> {{ comentar.usuario }}</td>
+       
+      </tr>     
+    </tbody>
+  </table>
+
+
+</div>
+
+
+</body>
+
+</html>
