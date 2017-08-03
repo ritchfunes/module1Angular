@@ -15,9 +15,9 @@ var app = angular.module("myapp" , []);
 
 
 
-app.controller("LunchCheckController" , function($scope) {
-	$scope.nuevocomentario = {}; 
-	$scope.comentarios = [ 
+app.controller("LunchCheckController" ,["$scope",  function(m) {
+	m.nuevocomentario = {}; 
+	m.comentarios = [ 
          {
          	comentario: "modulo 1" ,
          	usuario:"Coursera" 
@@ -29,11 +29,11 @@ app.controller("LunchCheckController" , function($scope) {
 
 	] ; // fin de comentarios 
 
-$scope.agregarcomentario = function()
+m.agregarcomentario = function()
 		{
-			$scope.comentarios.push($scope.nuevocomentario) ; 
-			$scope.nuevocomentario = {}; 
+			m.comentarios.push(m.nuevocomentario) ; 
+			m.nuevocomentario = {}; 
 		}
 
-});
+} ] );
 
